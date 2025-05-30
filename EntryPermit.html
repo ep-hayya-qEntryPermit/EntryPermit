@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hayya - Entry Permit</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #1f4e60;
+            color: white;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 16px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .card {
+            border: 2px solid rgba(238, 237, 237, 0.2);
+            border-radius: 8px;
+            background: linear-gradient (135deg, #EEEDED10, #EEEDED10);
+        }
+.card {
+  border: 2px solid rgba(238, 237, 237, 0.2);
+  border-radius: 8px;
+  background: linear-gradient(135deg, #EEEDED30, #EEEDED10);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+}
+.card {
+  /* ...existing styles... */
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+}
+
+        /* Qatar Logo Section */
+        .qatar-logo {
+            grid-column: span 1;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .qatar-logo {
+                grid-column: span 2;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .qatar-logo {
+                grid-column: span 1;
+            }
+        }
+
+
+
+        .qatar-logo .title {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        /* Visa Details Section */
+        .visa-details {
+            grid-column: span 1;
+            padding-bottom: 16px;
+        }
+
+        @media (min-width: 768px) {
+            .visa-details {
+                grid-column: span 2;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .visa-details {
+                grid-column: span 3;
+            }
+        }
+
+        .visa-details .header {
+            border-bottom: 2px solid rgba(238, 237, 237, 0.2);
+            padding: 16px 24px;
+            font-weight: 600;
+        }
+
+        .visa-details .content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            padding: 16px 24px;
+        }
+
+        @media (min-width: 768px) {
+            .visa-details .content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .visa-details .content {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .visa-details .field-group {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .visa-details .field {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .visa-details .field .label {
+            font-size: 14px;
+            margin-bottom: 4px;
+            opacity: 0.8;
+        }
+
+        .visa-details .field .value {
+            font-weight: 500;
+        }
+
+        /* Photo and Valid Section */
+        .photo-section {
+            grid-column: span 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 40px;
+        }
+
+        @media (min-width: 768px) {
+            .photo-section {
+                grid-column: span 2;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .photo-section {
+                grid-column: span 2;
+            }
+        }
+
+       .photo-container {
+  display: flex;
+  margin-bottom: 16px;
+  width: 100%;
+  height: auto;
+}
+
+.photo {
+  flex: 2;
+  height: 100%;
+  max-height: 100%;
+  border-radius: 8px 0 0 8px;
+  overflow: hidden;
+}
+
+.applicant-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px 0 0 8px;
+}
+
+.valid-badge {
+  flex: 1;
+  height: 100%;
+  border-radius: 0 8px 8px 0;
+  background: radial-gradient(circle, rgba(0, 255, 94, 0.1), rgba(0, 204, 74, 0.1), rgba(0, 153, 56, 0.1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 600;
+}
+.photo {
+  aspect-ratio: 3 / 4; /* or whatever matches your photo */
+  width: 100%;
+}
+
+
+        @media (min-width: 1024px) {
+            .valid-badge {
+                font-size: 48px;
+            }
+        }
+        @media (min-width: 768px) {
+    .photo,
+    .valid-badge {
+        height: 250px;
+    }
+}
+.photo-container {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.photo {
+  width: 50%;
+  height: 200px;
+  border-radius: 8px 0 0 8px;
+  overflow: hidden;
+}
+
+.valid-badge {
+  width: 35%;
+  height: 200px;
+  border-radius: 0 8px 8px 0;
+  background: radial-gradient(circle, rgba(0, 255, 94, 0.1), rgba(0, 204, 74, 0.1), rgba(0, 153, 56, 0.1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.applicant-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px 0 0 8px;
+}
+
+@media (min-width: 1280px) {
+    .photo,
+    .valid-badge {
+        height: 350px;
+    }
+}
+
+        .name-section .label {
+            font-size: 14px;
+            margin-bottom: 4px;
+            opacity: 0.8;
+        }
+
+        .name-section .name {
+            font-size: 32px;
+            font-weight: 600;
+        }
+
+        /* Personal Information and Passport Section */
+        .info-section {
+            grid-column: span 1;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        @media (min-width: 768px) {
+            .info-section {
+                grid-column: span 2;
+                flex-direction: row;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .info-section {
+                grid-column: span 1;
+                flex-direction: column;
+            }
+        }
+
+        .info-card {
+            flex: 1;
+            padding-bottom: 16px;
+        }
+
+        .info-card .header {
+            border-bottom: 2px solid rgba(238, 237, 237, 0.2);
+            padding: 16px 24px;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        .info-card .content {
+            padding: 16px 24px;
+        }
+
+        .info-card .field-group {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .info-card .field {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-card .field .label {
+            font-size: 14px;
+            margin-bottom: 4px;
+            opacity: 0.8;
+        }
+
+        .info-card .field .value {
+            font-weight: 500;
+        }
+
+        /* QR Code Section */
+        .qr-section {
+            grid-column: span 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        @media (min-width: 768px) {
+            .qr-section {
+                grid-column: span 2;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .qr-section {
+                grid-column: span 1;
+            }
+        }
+.qr-photo {
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.05); /* Optional */
+}
+
+.qr-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.qr-photo {
+  width: 100%;
+  max-width: 200px;
+  aspect-ratio: 1 / 1;
+  height: auto;
+}
+
+
+.qr-content {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+        .qr-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            padding: 24px;
+            flex: 1;
+        }
+
+        .qr-code {
+            width: 180px;
+            height: 180px;
+            background-color: #1f4e60;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+
+
+    
+        .hayya-logo-section {
+            padding: 16px;
+            border-top: 2px solid rgba(238, 237, 237, 0.2);
+            display: flex;
+            justify-content: center;
+        }
+
+
+
+        /* Grid order for responsive layout */
+        .qatar-logo { order: 1; }
+        .visa-details { order: 3; }
+        .photo-section { order: 2; }
+        .info-section { order: 4; }
+        .qr-section { order: 5; }
+
+        @media (min-width: 1024px) {
+            .visa-details { order: 2; }
+            .photo-section { order: 3; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="grid">
+            <!-- Qatar Logo Section -->
+            <div class="card qatar-logo">
+                <div class="logo"><img src="c:\Users\chala\Desktop\index.html\Qatar_State_Logo.png" alt="A photo of me" />
+</div>
+                <div class="title">
+                    Hayya Entry Visa <br> for State of Qatar
+                </div>
+            </div>
+
+            <!-- Visa Details Section -->
+            <div class="card visa-details">
+                <div class="header">HAYYA ENTRY VISA</div>
+                <div class="content">
+                    <div class="field-group">
+                        <div class="field">
+                            <div class="label">Issuing Date</div>
+                            <div class="value">2025-05-25</div>
+                        </div>
+                        <div class="field">
+                            <div class="label">Last Entry Date</div>
+                            <div class="value">2025-08-23</div>
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <div class="field">
+                            <div class="label">ENTRY REFERENCE NO.</div>
+                            <div class="value">HT965398623</div>
+                        </div>
+                        <div class="field">
+                            <div class="label">Application Status</div>
+                            <div class="value">VALID</div>
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <div class="field">
+                            <div class="label">DURATION</div>
+                            <div class="value">30</div>
+                        </div>
+                        <div class="field">
+                            <div class="label">VISA CATEGORY</div>
+                            <div class="value">Tourist Visa (A1)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photo and Valid Section -->
+            <div class="card photo-section">
+                <div class="photo-container">
+                    <div class="photo">
+  <img src="c:\Users\chala\Desktop\index.html\photo_2025-05-29_02-22-34.jpg" alt="Applicant Photo" class="applicant-photo" />
+</div>
+
+                    <div class="valid-badge">
+                        VALID
+                    </div>
+                </div>
+                <div class="name-section">
+                    <div class="label">FULL NAME</div>
+                    <div class="name">TIZITA TESFAYE BELILA</div>
+                </div>
+            </div>
+
+            <!-- Personal Information and Passport Section -->
+            <div class="info-section">
+                <!-- Personal Information -->
+                <div class="card info-card">
+                    <div class="header">PERSONAL INFORMATION</div>
+                    <div class="content">
+                        <div class="field-group">
+                            <div class="field">
+                                <div class="label">Nationality</div>
+                                <div class="value">Ethiopia</div>
+                            </div>
+                            <div class="field">
+                                <div class="label">Gender</div>
+                                <div class="value">FEMALE</div>
+                            </div>
+                            <div class="field">
+                                <div class="label">Date of Birth</div>
+                                <div class="value">1998-03-27</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Passport Information -->
+                <div class="card info-card">
+                    <div class="header">PASSPORT</div>
+                    <div class="content">
+                        <div class="field-group">
+                            <div class="field">
+                                <div class="label">Passport Number</div>
+                                <div class="value">EQ1388795</div>
+                            </div>
+                            <div class="field">
+                                <div class="label">Passport Type</div>
+                                <div class="value">NORMAL</div>
+                            </div>
+                            <div class="field">
+                                <div class="label">Passport Expiry Date</div>
+                                <div class="value">2029-12-24</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- QR Code Section -->
+            <div class="card qr-section">
+                <div class="qr-content">
+                    <div class="qr-photo">
+                        <div class=""><img src="c:\Users\chala\Desktop\index.html\qrcode (2)bh0.jpg" alt="A photo of me" />
+                        </div>
+                    </div>
+                    <div class="qr-reference">HT965398623</div>
+                </div>
+                <div class="hayya-logo-section">
+                    <div class="hayya-logo"><img src="c:\Users\chala\Desktop\index.html\Hayya_Logo.png" alt="A photo of me" />
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
